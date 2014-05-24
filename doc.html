@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<html>
+<h1 align=center style="color:#FF4500">Documentation</h1>
+NAME<br>
+<p> 	./commit-tester-report.pl: The program generates commit-tester html report form txt results.</p><br>
+SYNOPSIS<br>
+	./commit-tester-report.pl [option...]<br>
+OPTIONS<br>
+	-o, --result-file <file><br>
+	   <file> is a file where results will be put in html format. If it isn't<br>
+	   specified then the output is placed to the file 'commit-tester-results.html'<br>
+	   in the current directory. If file was already existed you will be<br>
+	   asked if you want to rewrite it.<br>
+	-h, --help<br>
+	   Print this help and exit with an error.<br>
+	--files="<file1> <file2> ..."<br>
+		<file1> and next files are commit-tester txt results.<br>
+		It can be found at commit-tester-results/<br>
+	--rewrite<br>
+		Do not ask confirm of html file rewriting if it already exists.
+</html>
