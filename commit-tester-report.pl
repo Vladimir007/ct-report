@@ -318,8 +318,15 @@ sub create_report($)
 			print($html_results ">$results_map{$i}{'old_verdict'}->$results_map{$i}{'new_verdict'}</td>
 				<td><small>$results_map{$i}{'memory'}</small></td>
 				<td><small>$results_map{$i}{'time'}</small></td>
-				<td><small>$results_map{$i}{'comment'}</small></td>
-				<td><small>$results_map{$i}{'problems'}</small></td>\n</tr>\n");
+				<td><small>$results_map{$i}{'comment'}</small></td>\n");
+			print {$html_results} "<td";
+                        if ($results_map{$i}{'problems'} =~ /Memory/) {
+				print {$html_results} " style=\"background:#7CFC00\"";
+			}
+			elsif ($results_map{$i}{'problems'} =~ /Time/) {
+				print {$html_results} " style=\"background:#FFFF00\"";
+			}
+                        print {$html_results} "><small>$results_map{$i}{'problems'}</small></td>\n</tr>\n";
 		}
 		$num_of_unknown_mains++ if(($results_map{$i}{'main'} eq 'n/a')
 										and ($results_map{$i}{'rule'} ne 'n/a'));
